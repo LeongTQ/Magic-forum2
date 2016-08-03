@@ -1,0 +1,58 @@
+.about {
+  .background {
+    background-image: asset-url("Aboutpic.jpg");
+    height: calc(100vh - 52px);
+    width: 100%;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .content {
+    color: white
+  }
+
+  .About_Team {
+    color: black
+  }
+
+  .short-underline {
+    width: 50px;
+    border-bottom: 2px solid orange;
+  }
+
+  .About_Site {
+    color: black
+  }
+
+  .Icon-container {
+    margin: 50px 0;
+
+    // display: flex;
+    // flex-wrap: wrap;
+    // max-width: 1200px;
+    // margin: 50px auto;
+    // justify-content: center;
+  }
+  .Icon_big {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 50px auto;
+    justify-content: center;
+  }
+  .Icon_ind {
+    margin: 20px 10px;
+    flex: 0 0 280px;
+    color: orange;
+  }
+
+  @media all and (max-width: 1199px) {
+    .Icon_big {
+      max-width: 600px
+    }
+  }
+}
