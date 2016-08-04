@@ -1,0 +1,30 @@
+.posts {
+
+  .background_posts {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .flex-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 80px;
+  }
+
+  .flex-child {
+    flex: 0 0 400px;
+    margin: 5px;
+    padding: 20px;
+    border: 4px solid orange;
+  }
+
+  .new_post_button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+}
