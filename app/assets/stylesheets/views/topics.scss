@@ -2,7 +2,7 @@
 
   .background_topics {
     background-image: asset-url("topicsphoto.jpg");
-    height: calc(120px);
+    height: 20vh;
     width: 100%;
     background-position: 50% 50%;
     background-repeat: no-repeat;
@@ -10,6 +10,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.9;
+  }
+
+  .background2_topics {
+    background-image: asset-url("grasspic.jpg");
+    height:auto;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .flex-parent {
@@ -17,14 +26,16 @@
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin: 80px;
+
   }
 
   .flex-child {
     flex: 0 0 400px;
-    margin: 5px;
+    margin: 10px;
     padding: 20px;
     border: 4px solid orange;
+    background-color: white;
+    opacity: 0.8;
   }
 
   .new_topic_button {
