@@ -6,10 +6,12 @@
   .navbar {
     margin-bottom: 0;
     font-weight: bold;
-    background-color: black;
+    background-color: white;
+    font-family: Cabin Sketch;
+    border-color: transparent;
 
     a, a:visited {
-      color: white;
+      color: orange;
     }
   }
 }
