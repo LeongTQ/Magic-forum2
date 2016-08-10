@@ -5,6 +5,8 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,6 +31,8 @@ gem 'bootstrap-sass'
 gem "font-awesome-rails"
 gem "carrierwave"
 gem "mini_magick"
+gem "pundit"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -43,6 +47,7 @@ end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
+  gem 'letter_opener'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
