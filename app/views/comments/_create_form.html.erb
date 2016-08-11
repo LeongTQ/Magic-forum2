@@ -1,10 +1,10 @@
-<%= form_for(comment, url: topic_post_comments_path(post.topic, post), method: :post, remote: true, html: { id: "comment-create-form" }) do |f| %>
+<%= form_for(comment, url: topic_post_comments_path(post.topic, post), method: :post, authenticity_token: true, remote: true, html: { id: "comment-create-form", multipart: true }) do |f| %>
 
   <div class="form-group">
       <h4 class="text-center"> Post Image </h4>
       <div id="preview-image">
-        <% if @comment.image? %>
-          <%= image_tag @comment.image, class: "img-settings img-responsive center-block" %>
+        <% if comment.image? %>
+          <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
         <% end %>
       </div>
     </div>
