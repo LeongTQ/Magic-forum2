@@ -1,8 +1,4 @@
-<div class="comments">
-  <div class="flex-parent text-center">
-    <div class="flex-child">
-
-<%= form_for(@comment, url: topic_post_comments_path(@topic, @post), html: { id: "comment-create-form" }) do |f| %>
+<%= form_for(comment, url: topic_post_comments_path(post.topic, post), method: :post, remote: true, html: { id: "comment-create-form" }) do |f| %>
 
   <div class="form-group">
       <h4 class="text-center"> Post Image </h4>
@@ -16,7 +12,7 @@
   <div class="form-group">
     <%= f.file_field :image, id: "post_image_field", class: 'form-control image-uploader' %>
   </div>
-  
+
   <h1 class="text-center">
     Create Comment
   </h1>
@@ -30,3 +26,4 @@
     <%= f.submit "Create Comment", class: "btn btn-success btn-lg" %>
   </div>
 <% end %>
+</div>

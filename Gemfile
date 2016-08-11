@@ -32,6 +32,8 @@ gem "font-awesome-rails"
 gem "carrierwave"
 gem "mini_magick"
 gem "pundit"
+gem 'responders'
+
 
 # Use Unicorn as the app server
 # gem 'unicorn'
