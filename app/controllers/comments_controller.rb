@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
     @new_comment = Comment.new
 
     if @comment.save
+      CommentBroadcastJob.set(wait: 0.1.seconds).perform_later("create", @comment)
       flash.now[:success] = "You've created a new comment."
     else
       flash.now[:danger] = @comment.errors.full_messages
@@ -54,8 +55,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.destroy
-      flash[:success] = "You've deleted the comment."
-      redirect_to topic_post_comments_path(@topic, @post)
+      flash.now[:success] = "You've deleted the comment."
     end
 
   end

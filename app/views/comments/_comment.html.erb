@@ -1,9 +1,18 @@
-<div class="flex-child comment" data-id="<%=comment.id%>">
+<div class="flex-child comment <%=extra_class%>" data-id="<%=comment.id%>">
   <% if comment.image? %>
     <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
   <% end %>
 
   <h5><%= comment.body %></h5>
-  <%= link_to ("Edit"), edit_topic_post_comment_path(post.topic, post, comment), remote: true, :class => "btn btn-warning" %>
-  <%= link_to ("Delete"), topic_post_comment_path(post.topic, post, comment), method: :delete, data: { confirm: "Delete?" }, :class => "btn btn-warning" %>
+
+  <div class="control-panel">
+    <% if comment.user == current_user %>
+      <%= link_to ("Edit"), edit_topic_post_comment_path(post.topic, post, comment), remote: true, :class => "btn btn-warning" %>
+    <% end %>
+
+    <% if comment.user == current_user || current_user&.admin? || current_user&.moderator? %>
+      <%= link_to ("Delete"), topic_post_comment_path(post.topic, post, comment), remote: true, method: :delete, data: { confirm: "Delete?" }, :class => "btn btn-warning" %>
+    <% end %>
+  </div>
+
 </div>

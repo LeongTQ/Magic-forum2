@@ -1,4 +1,4 @@
-<div class="comments-index">
+<div class="comments index">
 
   <div class="background_comments">
     <h1>Comments</h1>
@@ -7,7 +7,7 @@
   <div class="flex-parent text-center">
     <div id="comments">
       <% @comments.each do |comment| %>
-        <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic } %>
+        <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic, extra_class: '' } %>
       <% end %>
     </div>
   </div>
