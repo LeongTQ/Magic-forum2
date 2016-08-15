@@ -1,0 +1,10 @@
+<div class="flex-child">
+    <% if post.image? %>
+      <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
+    <% end %>
+    
+  <h3><%= link_to post.title, topic_post_comments_path(@topic, post), :class => "title-link-color" %></h3>
+  <h5><%= post.body %></h5>
+  <%= link_to ("Edit"), edit_topic_post_path(@topic, post), :class => "btn btn-warning" %>
+  <%= link_to ("Delete"), topic_post_path(@topic, post), method: :delete, data: { confirm: "Delete?" }, :class => "btn btn-warning" %>
+</div>

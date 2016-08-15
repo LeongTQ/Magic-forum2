@@ -34,6 +34,7 @@ gem "mini_magick"
 gem "pundit"
 gem 'responders'
 gem 'remotipart', github: 'sr3d/remotipart'
+gem 'kaminari'
 
 # Use Unicorn as the app server
 # gem 'unicorn'

@@ -1,3 +1,4 @@
+<div id="comment-form-container">
 <%= form_for(comment, url: topic_post_comments_path(post.topic, post), method: :post, authenticity_token: true, remote: true, html: { id: "comment-create-form", multipart: true }) do |f| %>
 
   <div class="form-group">
@@ -7,7 +8,7 @@
           <%= image_tag comment.image, class: "img-settings img-responsive center-block" %>
         <% end %>
       </div>
-    </div>
+  </div>
 
   <div class="form-group">
     <%= f.file_field :image, id: "post_image_field", class: 'form-control image-uploader' %>
@@ -25,5 +26,6 @@
   <div class="form-group text-center">
     <%= f.submit "Create Comment", class: "btn btn-success btn-lg" %>
   </div>
+
 <% end %>
 </div>

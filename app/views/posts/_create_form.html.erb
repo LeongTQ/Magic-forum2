@@ -1,13 +1,9 @@
-<div class="topics">
-  <div class="flex-parent text-center">
-    <div class="flex-child">
-
-<%= form_for(@post, url: topic_posts_path(@topic), html: { id: "post-create-form" }) do |f| %>
+<%= form_for(post, url: topic_posts_path(topic), method: :post, authenticity_token: true, remote: true, html: { id: "post-create-form", multipart: true }) do |f| %>
   <div class="form-group">
       <h4 class="text-center"> Post Image </h4>
       <div id="preview-image">
-        <% if @post.image? %>
-          <%= image_tag @post.image, class: "img-settings img-responsive center-block" %>
+        <% if post.image? %>
+          <%= image_tag post.image, class: "img-settings img-responsive center-block" %>
         <% end %>
       </div>
     </div>

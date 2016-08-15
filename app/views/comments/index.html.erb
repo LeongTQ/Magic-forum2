@@ -1,4 +1,4 @@
-<div class="comments">
+<div class="comments-index">
 
   <div class="background_comments">
     <h1>Comments</h1>
@@ -6,18 +6,20 @@
 
   <div class="flex-parent text-center">
     <div id="comments">
-    <% @comments.each do |comment| %>
-      <%= render partial: "comments", locals: { comment: comment, post: @post } %>
-    <% end %>
+      <% @comments.each do |comment| %>
+        <%= render partial: "comment", locals: { comment: comment, post: @post, topic: @topic } %>
+      <% end %>
     </div>
   </div>
 
-  <div class="new_comment_button">
+  <!-- <div class="new_comment_button">
     <%= link_to ("Add New Comment"), new_topic_post_comment_path, :class => "btn btn-warning" %>
-  </div>
+  </div> -->
 
   <div id="comments-form-container">
-  <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
+    <%= render partial: "create_form", locals: { comment: @comment, post: @post } %>
   </div>
+
+  <%= paginate @comments %>
 
 </div>
