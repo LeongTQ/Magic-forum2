@@ -1,2 +1,6 @@
 console.log($('.comment[data-id=<%=@comment.id%>]'))
+
 $('.comment[data-id=<%=@comment.id%>]').html("<%=j render partial: 'edit_form', locals: { comment: @comment, post: @post, topic: @topic } %>")
+$('.cancel-button').on('click', function() {
+  $('.comment[data-id=<%=@comment.id%>]').after("<%=j render partial: 'comments/comment', locals: { comment: @comment, post: @comment.post } %>").remove()
+})

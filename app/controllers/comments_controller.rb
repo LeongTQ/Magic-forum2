@@ -39,6 +39,7 @@ class CommentsController < ApplicationController
 
     if @comment.update(comment_params)
       @comment_updated = true
+      CommentBroadcastJob.perform_now("update", @comment)
       flash.now[:success] = "You've updated your comment."
 
     else
@@ -55,6 +56,7 @@ class CommentsController < ApplicationController
     authorize @comment
 
     if @comment.destroy
+      CommentBroadcastJob.perform_now("destroy", @comment)
       flash.now[:success] = "You've deleted the comment."
     end
 

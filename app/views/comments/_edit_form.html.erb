@@ -17,7 +17,10 @@
       </div>
 
       <div class="form-group text-center">
-        <%= f.submit "Update Comment", class: "btn btn-success btn-lg" %>
+        <%= f.submit class: "btn btn-success btn-lg" %>
+        <div class="btn btn-success btn-lg cancel-button" data-id="<%= @comment.id %>">
+          Cancel here lah
+        </div>
       </div>
 
     <% end %>
