@@ -5,4 +5,5 @@ class User < ApplicationRecord
   has_many :comments
   validates :email, uniqueness: true
   enum role: [:user, :moderator, :admin]
+  has_many :votes
 end

@@ -19,8 +19,6 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
   end
 
-
-
   def update
     @user = User.find_by(id: params[:id])
   end
