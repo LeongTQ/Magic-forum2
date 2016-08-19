@@ -25,12 +25,12 @@ class TopicsController < ApplicationController
   end
 
   def edit
-    @topic = Topic.find_by(id:params[:id])
+    @topic = Topic.friendly.find(params[:id])
     authorize @topic
   end
 
   def update
-    @topic = Topic.find_by(id: params[:id])
+    @topic = Topic.friendly.find(params[:id])
     authorize @topic
 
     if @topic.update(topic_params)
@@ -43,7 +43,7 @@ class TopicsController < ApplicationController
   end
 
   def destroy
-    @topic = Topic.find_by(id: params[:id])
+    @topic = Topic.friendly.find(params[:id])
     authorize @topic
 
     if @topic.destroy

@@ -16,11 +16,11 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(id: params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   def update
-    @user = User.find_by(id: params[:id])
+    @user = User.friendly.find(params[:id])
   end
 
   private

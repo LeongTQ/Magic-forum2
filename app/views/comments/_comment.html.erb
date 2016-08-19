@@ -15,6 +15,6 @@
   <div class="vote-buttons">
     Score: <%= comment.total_votes %>
     <%= link_to ("Upvote"), upvote_path({comment_id: comment.id}), method: :post, remote: true, class: "fa fa-thumbs-o-up" %>
-    <%= link_to ("Downvote"), downvote_path(comment), method: :post, class: "fa fa-thumbs-o-down" %>
+    <%= link_to ("Downvote"), downvote_path({comment_id: comment.id}), method: :post, remote: true, class: "fa fa-thumbs-o-down" %>
   </div>
 </div>

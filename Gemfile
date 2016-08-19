@@ -36,7 +36,7 @@ gem 'responders'
 gem 'remotipart', github: 'sr3d/remotipart'
 gem 'kaminari'
 gem 'redis', '~>3.2'
-
+gem 'friendly_id', github: 'norman/friendly_id'
 # Use Unicorn as the app server
 # gem 'unicorn'
 

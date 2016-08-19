@@ -6,4 +6,7 @@ class User < ApplicationRecord
   validates :email, uniqueness: true
   enum role: [:user, :moderator, :admin]
   has_many :votes
+
+  extend FriendlyId
+  friendly_id :username, use: :slugged
 end
