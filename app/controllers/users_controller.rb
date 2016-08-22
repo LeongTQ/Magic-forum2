@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate!, only: [:edit, :update]
+
   def new #GET
     @user = User.new
   end
@@ -17,10 +19,20 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.friendly.find(params[:id])
+    authorize @user
   end
 
   def update
     @user = User.friendly.find(params[:id])
+    authorize @user
+
+    if @user.update(user_params)
+      flash[:success] = "Updated!"
+      redirect_to root_path
+    else
+      flash[:danger] = @user.errors.full_messages
+      render :edit
+    end
   end
 
   private

@@ -37,6 +37,7 @@ gem 'remotipart', github: 'sr3d/remotipart'
 gem 'kaminari'
 gem 'redis', '~>3.2'
 gem 'friendly_id', github: 'norman/friendly_id'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -46,6 +47,17 @@ gem 'friendly_id', github: 'norman/friendly_id'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'pry'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
+  gem 'capybara'
+  gem 'selenium-webdriver'
 end
 
 group :development do
