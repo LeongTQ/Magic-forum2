@@ -1,5 +1,5 @@
 class VotesController < ApplicationController
-  # before action authenticate
+  before_action :authenticate!
   # respond js
 
   def upvote
@@ -32,5 +32,5 @@ class VotesController < ApplicationController
     def vote_params
     params.require(:vote).permit(:value, :user_id, :comment_id)
     end
-    
+
 end

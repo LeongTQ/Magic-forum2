@@ -17,9 +17,14 @@
   <div id="header">
     <%= render partial: 'partials/header' %>
   </div>
+
   <div id="flash-messages-container">
     <%= render partial: "partials/flash_messages" %>
+    <%= render partial: "sessions/login" %>
+    <%= render partial: "users/register" %>
   </div>
+
+
 
 <%= yield %>
 

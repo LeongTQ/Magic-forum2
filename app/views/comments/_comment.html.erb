@@ -14,6 +14,13 @@
 
   <div class="vote-buttons">
     Score: <%= comment.total_votes %>
+    Date: <%= comment.created_at.strftime("%B %d, %Y") %>
+    User: <%= comment.user.username %>
+    <% if comment.user.image? %>
+    Userpic: <%= image_tag comment.user.image.url %>
+    
+    <% end %>
+
     <%= link_to ("Upvote"), upvote_path({comment_id: comment.id}), method: :post, remote: true, class: "fa fa-thumbs-o-up" %>
     <%= link_to ("Downvote"), downvote_path({comment_id: comment.id}), method: :post, remote: true, class: "fa fa-thumbs-o-down" %>
   </div>
