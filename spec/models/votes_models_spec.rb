@@ -1,0 +1,9 @@
+require 'rails_helper'
+
+RSpec.describe Vote, type: :model do
+
+  context "assocation" do
+    it { should belong_to(:user) }
+    it { should belong_to(:comment) }
+  end
+end

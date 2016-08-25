@@ -3,7 +3,6 @@ class VotesController < ApplicationController
   # respond js
 
   def upvote
-    @comment = Comment.find_by(id: params[:id])
     @vote = current_user.votes.find_or_create_by(comment_id: params[:comment_id])
 
     if @vote
@@ -17,7 +16,6 @@ class VotesController < ApplicationController
     # then you have to tie this with a VoteBroadcastJob that connects to an actioncable channel
 
   def downvote
-    @comment = Comment.find_by(id: params[:id])
     @vote = current_user.votes.find_or_create_by(comment_id: params[:comment_id])
 
     if @vote

@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe UsersController, type: :controller do
 
   before(:all) do
-    @user = User.create( {username:"happy", email:"happy@gmail.com", password:"happy"} )
-    @unauthorized_user = User.create( {username:"sad", email:"sad@gmail.com", password:"sad"} )
+    @user = create(:user)
+    @unauthorized_user = create(:user, :sequenced_email)
   end
 
   describe "create user" do
@@ -13,11 +13,11 @@ RSpec.describe UsersController, type: :controller do
       params = { user: { username:"angry", email:"angry@gmail.com", password:"angry" } }
       post :create, params: params
 
-      user = User.find_by(email: "happy@gmail.com")
+      user = User.find_by(email: "user@email.com")
 
       expect(User.count).to eql(3)
-      expect(user.email).to eql("happy@gmail.com")
-      expect(user.username).to eql("happy")
+      expect(user.email).to eql("user@email.com")
+      expect(user.username).to eql("bob")
       expect(flash[:success]).to eql("Thank you. You're now registered.")
     end
   end
