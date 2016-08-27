@@ -20,9 +20,7 @@
                 <%= link_to current_user.username, edit_user_path(current_user), class: 'white shadowed link-styling' %>
               </li>
 
-              <li>
-                <%= link_to "Logout", session_path(current_user), method: :delete, class: 'white shadowed link-styling' %>
-              </li>
+              <li><%= link_to "Logout", session_path(current_user), method: :delete, class: 'white shadowed link-styling' %></li>
 
             <% else %>
 
@@ -33,8 +31,10 @@
               <li>
                 <%= link_to "Login", new_session_path, class: 'white shadowed link-styling' %>
               </li> -->
-              <li><a data-toggle="modal" data-target="#register" class="white shadowed link-styling">Register</a></li>
-              <li><a data-toggle="modal" data-target="#login" class="white shadowed link-styling">Login</a></li>
+              <!-- <li><a data-toggle="modal" data-target="#register" class="white shadowed link-styling">Register</a></li> -->
+              <li><%= link_to "Register", '#', class: 'user-register', data: { toggle: 'modal', target: '#register' } %></li>
+              <li><%= link_to "Login", '#', class: 'user-login', data: { toggle: 'modal', target: '#login' } %></li>
+              <!-- <li><a data-toggle="modal" data-target="#login" class="white shadowed link-styling">Login</a></li> -->
 
             <% end %>
           </ul>
