@@ -13,6 +13,4 @@ RSpec.feature "User Navigation", type: :feature do
 
     expect(page).to have_current_path(topics_path)
   end
-
-  scenario "User visits posts"
 end

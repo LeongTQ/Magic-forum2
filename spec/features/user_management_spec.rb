@@ -88,6 +88,6 @@ RSpec.feature "User Management", type: :feature do
     user = User.find_by(email: "user@email.com")
 
     expect(page).to have_current_path(root_path)
-    expect(find('.flash-messages .message').text).to eql("We've sent you instructions on how to reset your password")
+    expect(find('.flash-messages.message').text).to eql("We've sent you instructions on how to reset your password")
   end
 end
